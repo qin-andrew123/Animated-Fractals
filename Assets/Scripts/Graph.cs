@@ -33,14 +33,22 @@ public class Graph : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float time = Time.time;
         for(int i =0; i < points.Length; ++i)
         {
             Transform point = points[i];
             Vector3 position = point.localPosition;
-            float xpos = position.x + time;
-            position.y = Mathf.Cos(3 * Mathf.PI * xpos / 2);
+            if(position.x > range)
+            {
+                position.x = (0 + 0.5f) * (range / resolution) - (range / 2f);
+            }
+            else
+            {
+                position.x += Time.deltaTime;
+            }
+            position.y = Mathf.Cos(Mathf.PI * position.x);
+            
             point.localPosition = position;
+
         }
     }
 }
