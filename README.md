@@ -12,4 +12,4 @@ Learned about URP and Shaders.
 - Similar but uses graphical coding instead
 
 Learned about animating graphs.
-- In update, want to take a function, and move the y position as a function of x + time and x remains stationary
+- In update, want to take a function, and move it across a range
