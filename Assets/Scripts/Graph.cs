@@ -8,24 +8,21 @@ public class Graph : MonoBehaviour
 {
     [SerializeField] Transform pointPrefab;
     [SerializeField, Range(10, 100)] int resolution;
-    [SerializeField, Range(2f, 100f)] float range;
+    [SerializeField] FunctionLibrary.FunctionName function;
 
     Transform[] points;
     void Awake()
     {
-        points = new Transform[resolution];
-        var position = Vector3.zero;
+        points = new Transform[resolution * resolution];
         
-        float step = range / resolution;
+        float step = 2f / resolution;
         var scale = Vector3.one * step;
 
-        for (int i = 0; i < points.Length; ++i)
+        for (int i = 0, x = 0, z = 0; i < points.Length; ++i, ++x)
         {
             Transform point = points[i] = Instantiate(pointPrefab);
 
-            position.x = (i + 0.5f) * step - (range / 2f);
             point.SetParent(transform, false);
-            point.localPosition = position;
             point.localScale = scale;
         }
     }
@@ -33,22 +30,25 @@ public class Graph : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i =0; i < points.Length; ++i)
+        float time = Time.time;
+
+        FunctionLibrary.Function fxn = FunctionLibrary.GetFunction(function);
+        float step = 2f / resolution;
+        float v = 0.5f * step - 1f;
+        for (int i = 0, x = 0, z = 0; i < points.Length; ++i, ++x)
         {
+            if (x == resolution)
+            {
+                x = 0;
+                z += 1;
+                v = (z + 0.5f) * step - 1f;
+            }
             Transform point = points[i];
             Vector3 position = point.localPosition;
-            if(position.x > range)
-            {
-                position.x = (0 + 0.5f) * (range / resolution) - (range / 2f);
-            }
-            else
-            {
-                position.x += Time.deltaTime;
-            }
-            position.y = Mathf.Cos(Mathf.PI * position.x);
-            
-            point.localPosition = position;
 
+            float u = (x + 0.5f) * step - 1f;
+
+            points[i].localPosition = fxn(u, v, time);
         }
     }
 }
