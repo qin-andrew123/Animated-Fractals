@@ -13,3 +13,9 @@ Learned about URP and Shaders.
 
 Learned about animating graphs.
 - In update, want to take a function, and move it across a range
+
+## Part 2: 3D Graphs
+- Learned how to implement graphs in 3D space
+- Learned about Delegates and how to use them 
+- Refreshed on Enums
+- Expanded by testing out different functions to play with
