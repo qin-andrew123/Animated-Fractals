@@ -1,5 +1,7 @@
 # Animated-Fractals
 
+Based on Tutorials from catlikecoding.com 
+
 Working up from graphs to building 3D shapes to fractals in Unity
 
 ## Part 1: Graphs
@@ -19,3 +21,11 @@ Learned about animating graphs.
 - Learned about Delegates and how to use them 
 - Refreshed on Enums
 - Expanded by testing out different functions to play with
+
+## Part 3: Determining Performance
+- Learned how to analyze performance of specific scenes and frames within Unity
+- Learned basic optimizations for renderers
+- Also implemented some minor UI elements to determine FPS and MS
+- Implemented basic automated function switching and learned Lerp and SmoothStep
+
+## Part 4: Shaders
