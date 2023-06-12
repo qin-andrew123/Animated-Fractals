@@ -1,20 +1,14 @@
-# Animated-Fractals
+# Animated-Graphs
 
-Based on Tutorials from catlikecoding.com 
-
-Working up from graphs to building 3D shapes to fractals in Unity
+Based on Tutorials from catlikecoding.com. This ReadMe serves as a documentation of what I've learned from the tutorials I followed from catlikecoding.com
 
 ## Part 1: Graphs
-
-Learned about URP and Shaders. 
+- Learned about URP and Shaders. 
 - Shaders use their own language different from C#
 - There are different types of functions that can be used, will have to look into documentation on my own
-
 - URP is its own set of shaders different from the built in Unity ones. 
 - Similar but uses graphical coding instead
-
-Learned about animating graphs.
-- In update, want to take a function, and move it across a range
+- Learned about animating graphs.
 
 ## Part 2: 3D Graphs
 - Learned how to implement graphs in 3D space
@@ -27,5 +21,3 @@ Learned about animating graphs.
 - Learned basic optimizations for renderers
 - Also implemented some minor UI elements to determine FPS and MS
 - Implemented basic automated function switching and learned Lerp and SmoothStep
-
-## Part 4: Shaders
