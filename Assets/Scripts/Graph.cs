@@ -9,7 +9,7 @@ public class Graph : MonoBehaviour
 {
     public enum TransitionMode { Cycle, Random }
     [SerializeField] Transform pointPrefab;
-    [SerializeField, Range(10, 100)] int resolution;
+    [SerializeField, Range(10, 200)] int resolution;
     [SerializeField] FunctionLibrary.FunctionName function;
     [SerializeField, Min(0f)] float functionDuration = 1f;
     [SerializeField, Min(0f)] float transitionDuration = 1f;
